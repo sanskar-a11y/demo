@@ -89,7 +89,7 @@ export default function AboutSection() {
       <div className="flex flex-col lg:flex-row w-full h-full">
         
         {/* Sticky Left / Background Side */}
-        <div className="lg:w-1/2 w-full h-[60vh] lg:h-screen sticky top-0 flex flex-col justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5 bg-obsidian z-0">
+        <div className="lg:w-1/2 w-full h-[60vh] lg:h-screen sticky top-0 pt-20 md:pt-24 flex flex-col justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5 bg-obsidian z-0">
           
           <motion.div 
             className="absolute inset-[-15%] z-0 w-[130%] h-[130%] will-change-transform"

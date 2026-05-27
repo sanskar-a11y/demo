@@ -44,7 +44,7 @@ export default function GallerySection() {
     <>
       {/* 400vh gives us plenty of scrolling length to complete the horizontal slide */}
       <section ref={targetRef} id="gallery" className="relative h-[400vh] bg-midnight text-pearl mt-12 md:mt-20">
-        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        <div className="sticky top-0 pt-20 md:pt-24 flex h-screen items-center overflow-hidden">
           
           {/* Ambient Lighting */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-berry/10 via-midnight/90 to-midnight -z-10 pointer-events-none" />
