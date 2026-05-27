@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Full Screen Blur Overlay for Mobile Menu */}
+      {/* Full Screen Mobile Menu Modal */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -27,9 +27,37 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[90] bg-midnight/60 backdrop-blur-xl"
-            onClick={() => setMobileMenuOpen(false)}
-          />
+            className="fixed inset-0 z-[110] flex items-center justify-center p-6 md:hidden"
+          >
+            {/* Clickable Blur Background */}
+            <div 
+              className="absolute inset-0 bg-midnight/70 backdrop-blur-2xl -z-10" 
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            
+            {/* Centered Glassmorphism Card */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 15 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="glass-strong rounded-3xl p-8 flex flex-col items-center gap-8 w-full max-w-sm"
+            >
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-2xl font-heading font-bold tracking-widest uppercase text-pearl hover:text-rose transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <a href="#gallery" className="btn-premium mt-2 w-full text-lg py-4" onClick={() => setMobileMenuOpen(false)}>
+                Get Demo
+              </a>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
 
@@ -82,34 +110,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-full left-0 right-0 p-4 md:hidden"
-          >
-            <div className="glass-strong rounded-2xl p-6 flex flex-col gap-6">
-              {NAV_ITEMS.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="text-xl font-heading font-bold tracking-widest uppercase text-pearl hover:text-rose transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <a href="#gallery" className="btn-premium mt-4 w-full" onClick={() => setMobileMenuOpen(false)}>
-                Get Demo
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
       </motion.header>
     </>
   );
