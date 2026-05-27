@@ -88,17 +88,17 @@ export default function GallerySection() {
                     />
 
                     {/* Elegant Number Indicator */}
-                    <div className="absolute bottom-8 left-8 z-20 text-pearl/50 font-heading font-light text-3xl tracking-[0.2em] mix-blend-difference">
+                    <div className="absolute bottom-8 left-8 z-20 text-pearl/50 font-heading font-light text-2xl tracking-[0.2em] mix-blend-difference">
                       0{index + 1}
                     </div>
                   </div>
 
                   {/* Text Content */}
                   <div className="px-4 z-10 flex flex-col gap-2 md:gap-3">
-                    <h3 className="font-heading text-2xl md:text-5xl uppercase tracking-tighter group-hover:text-rose transition-colors duration-[1s] ease-[cubic-bezier(0.22,1,0.36,1)] text-pearl drop-shadow-lg">
+                    <h3 className="font-heading text-xl md:text-4xl uppercase tracking-tighter group-hover:text-rose transition-colors duration-[1s] ease-[cubic-bezier(0.22,1,0.36,1)] text-pearl drop-shadow-lg">
                       {item.title}
                     </h3>
-                    <p className="font-body font-light text-pearl/50 tracking-[0.1em] md:tracking-[0.2em] text-xs md:text-base uppercase">
+                    <p className="font-body font-light text-pearl/50 tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-sm uppercase">
                       {item.description}
                     </p>
                   </div>
