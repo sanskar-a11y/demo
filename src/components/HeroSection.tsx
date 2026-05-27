@@ -35,12 +35,12 @@ export default function HeroSection() {
 
         {/* ━━━ Layer 1: Dominant Composition ━━━ */}
         <motion.div
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4 pt-32 md:pt-48"
+          className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none px-4 pt-32 md:pt-48 will-change-transform"
           style={{ opacity: layer1Opacity, y: layer1Y, scale: layer1Scale }}
         >
           {/* Main Dominant Headline */}
           <motion.h1
-            className="font-heading font-semibold uppercase leading-[0.8] tracking-[-0.02em] text-[20vw] md:text-[14rem] lg:text-[18rem] m-0 p-0 gradient-text-pearl drop-shadow-[0_0_40px_rgba(255,255,255,0.1)]"
+            className="font-heading font-semibold uppercase leading-[0.8] tracking-[-0.02em] text-[20vw] md:text-[10rem] lg:text-[14rem] xl:text-[18rem] m-0 p-0 gradient-text-pearl drop-shadow-[0_0_40px_rgba(255,255,255,0.1)]"
             initial={{ opacity: 0, filter: 'blur(20px)' }}
             animate={{ opacity: 1, filter: 'blur(0px)' }}
             transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
           {/* Supporting Tagline */}
           <motion.p
-            className="mt-8 md:mt-12 text-sm md:text-xl lg:text-2xl text-dust font-body font-light tracking-[0.3em] uppercase"
+            className="mt-6 md:mt-12 text-xs md:text-xl lg:text-2xl text-dust font-body font-light tracking-[0.15em] md:tracking-[0.3em] uppercase text-center max-w-[90vw] md:max-w-full"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 1 }}
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
         {/* Scroll Indicator for Layer 1 */}
         <motion.div
-          className="absolute bottom-12 left-0 right-0 z-10 flex flex-col items-center pointer-events-none"
+          className="absolute bottom-12 left-0 right-0 z-10 flex flex-col items-center pointer-events-none will-change-transform"
           style={{ opacity: layer1Opacity }}
         >
           <motion.div
@@ -75,7 +75,7 @@ export default function HeroSection() {
             </span>
             <div className="w-[1px] h-12 bg-gradient-to-b from-rose/0 via-rose/30 to-rose/0 relative overflow-hidden">
               <motion.div 
-                className="w-[2px] h-8 bg-pearl absolute top-0 -left-[0.5px]"
+                className="w-[2px] h-8 bg-pearl absolute top-0 -left-[0.5px] will-change-transform"
                 animate={{ y: [-32, 48] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: 'linear' }}
               />

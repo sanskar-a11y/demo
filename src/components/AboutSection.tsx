@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 
 const bespokeFeatures = [
   {
@@ -38,17 +39,19 @@ function FeatureBlock({ feature, index }: { feature: typeof bespokeFeatures[0]; 
       ref={blockRef} 
       className="min-h-screen flex flex-col justify-center px-6 md:px-16 py-24 lg:py-32 border-b border-white/5 last:border-0"
     >
-      <motion.div style={{ opacity, y }} className="flex flex-col w-full max-w-xl mx-auto">
+      <motion.div style={{ opacity, y }} className="flex flex-col w-full max-w-xl mx-auto will-change-transform">
         <div className="w-full aspect-[4/5] md:aspect-square rounded-[2.5rem] overflow-hidden mb-12 relative group glass-card">
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-transparent z-10 opacity-60 group-hover:opacity-20 transition-opacity duration-700" />
           <motion.div 
-            className="absolute inset-[-15%] w-[130%] h-[130%]"
+            className="absolute inset-[-15%] w-[130%] h-[130%] will-change-transform"
             style={{ y: imgY }}
           >
-            <img 
+            <Image 
               src={feature.img} 
               alt={feature.title}
-              className="w-full h-full object-cover filter grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover filter grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
             />
           </motion.div>
         </div>
@@ -89,7 +92,7 @@ export default function AboutSection() {
         <div className="lg:w-1/2 w-full h-[60vh] lg:h-screen sticky top-0 flex flex-col justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-white/5 bg-obsidian z-0">
           
           <motion.div 
-            className="absolute inset-[-15%] z-0 w-[130%] h-[130%]"
+            className="absolute inset-[-15%] z-0 w-[130%] h-[130%] will-change-transform"
             style={{ 
               backgroundImage: 'url("https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80")',
               backgroundSize: 'cover',
@@ -122,7 +125,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-              className="font-heading text-5xl md:text-7xl lg:text-[7rem] uppercase leading-[0.85] tracking-tighter mb-8"
+              className="font-heading text-4xl md:text-7xl lg:text-[7rem] uppercase leading-[0.85] tracking-tighter mb-8"
             >
               <span className="block text-transparent bg-clip-text bg-gradient-to-br from-pearl to-dust">Unleash</span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-br from-pearl to-dust/70">Your Inner</span>

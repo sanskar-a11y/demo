@@ -2,15 +2,16 @@
 
 import { useRef, useState, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import GalleryModal from './GalleryModal';
 
 const PRODUCTS = [
   { id: 1, src: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80', title: 'Midnight Elixir', description: 'Cold-drip extraction. Pure velvet.' },
   { id: 2, src: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80', title: 'Velvet Reserve', description: 'Double-caffeinated precision.' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1542849884-297eb0981987?auto=format&fit=crop&w=800&q=80', title: 'Crimson Drop', description: 'Botanical infusion. Zero compromise.' },
+  { id: 3, src: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80', title: 'Crimson Drop', description: 'Botanical infusion. Zero compromise.' },
   { id: 4, src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80', title: 'Noir Essence', description: 'Smoked glass & shadow profiles.' },
-  { id: 5, src: 'https://images.unsplash.com/photo-1582229562768-450ec63b1990?auto=format&fit=crop&w=800&q=80', title: 'The Architect', description: 'Structured energy. Perfect balance.' },
-  { id: 6, src: 'https://images.unsplash.com/photo-1574341991879-11ba1613eb53?auto=format&fit=crop&w=800&q=80', title: 'Obsidian Flow', description: 'Liquid midnight in every pour.' },
+  { id: 5, src: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=800&q=80', title: 'The Architect', description: 'Structured energy. Perfect balance.' },
+  { id: 6, src: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80', title: 'Obsidian Flow', description: 'Liquid midnight in every pour.' },
 ];
 
 export default function GallerySection() {
@@ -59,7 +60,7 @@ export default function GallerySection() {
           </div>
 
           {/* The sliding track */}
-          <motion.div style={{ x }} className="flex gap-16 md:gap-32 px-12 md:px-32 w-max items-center">
+          <motion.div style={{ x }} className="flex gap-8 md:gap-16 lg:gap-32 px-6 md:px-12 lg:px-32 w-max items-center will-change-transform">
             {PRODUCTS.map((item, index) => {
               // Creating varied presentation with vertical rhythm
               const isEven = index % 2 === 0;
@@ -78,11 +79,12 @@ export default function GallerySection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-rose/30 to-transparent mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-[1.5s]" />
                     <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-pearl/20 to-transparent bg-[length:200%_200%] -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-[2s] ease-[cubic-bezier(0.22,1,0.36,1)] z-10 mix-blend-overlay" />
                     
-                    <img 
+                    <Image 
                       src={item.src} 
                       alt={item.title} 
-                      loading="lazy"
-                      className="w-full h-full object-cover transform transition-transform duration-[2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+                      fill
+                      sizes="(max-width: 768px) 70vw, (max-width: 1200px) 35vw, 22vw"
+                      className="object-cover transform transition-transform duration-[2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
                     />
 
                     {/* Elegant Number Indicator */}
@@ -92,11 +94,11 @@ export default function GallerySection() {
                   </div>
 
                   {/* Text Content */}
-                  <div className="px-4 z-10 flex flex-col gap-3">
-                    <h3 className="font-heading text-4xl md:text-5xl uppercase tracking-tighter group-hover:text-rose transition-colors duration-[1s] ease-[cubic-bezier(0.22,1,0.36,1)] text-pearl drop-shadow-lg">
+                  <div className="px-4 z-10 flex flex-col gap-2 md:gap-3">
+                    <h3 className="font-heading text-2xl md:text-5xl uppercase tracking-tighter group-hover:text-rose transition-colors duration-[1s] ease-[cubic-bezier(0.22,1,0.36,1)] text-pearl drop-shadow-lg">
                       {item.title}
                     </h3>
-                    <p className="font-body font-light text-pearl/50 tracking-[0.2em] text-sm md:text-base uppercase">
+                    <p className="font-body font-light text-pearl/50 tracking-[0.1em] md:tracking-[0.2em] text-xs md:text-base uppercase">
                       {item.description}
                     </p>
                   </div>
