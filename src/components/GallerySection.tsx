@@ -67,7 +67,7 @@ export default function GallerySection() {
               return (
                 <div 
                   key={item.id}
-                  className="group relative flex-shrink-0 cursor-pointer w-[70vw] md:w-[35vw] lg:w-[22vw] transition-transform duration-700 hover:scale-105 hover:z-50"
+                  className="group relative flex-shrink-0 cursor-pointer w-[56vw] md:w-[28vw] lg:w-[18vw] transition-transform duration-700 hover:scale-105 hover:z-50"
                   onClick={() => handleCardClick(index)}
                 >
                   {/* Premium Glass Backdrop */}
@@ -83,7 +83,7 @@ export default function GallerySection() {
                       src={item.src} 
                       alt={item.title} 
                       fill
-                      sizes="(max-width: 768px) 70vw, (max-width: 1200px) 35vw, 22vw"
+                      sizes="(max-width: 768px) 56vw, (max-width: 1200px) 28vw, 18vw"
                       className="object-cover transform transition-transform duration-[2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
                     />
 
