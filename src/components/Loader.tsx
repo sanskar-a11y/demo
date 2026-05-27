@@ -9,11 +9,26 @@ export default function Loader() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [loading]);
+
+  useEffect(() => {
     let animationFrameId: number;
     const duration = 2000; // 2 seconds to reach 100%
-    const startTime = performance.now();
+    let startTime: number | null = null;
 
     const animate = (currentTime: number) => {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
