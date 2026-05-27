@@ -22,39 +22,51 @@ export default function Loader() {
 
   useEffect(() => {
     let animationFrameId: number;
-    const duration = 2000; // 2 seconds to reach 100%
     let startTime: number | null = null;
+    let currentProgress = 0;
+    let isPageLoaded = document.readyState === 'complete';
+
+    const handleLoad = () => {
+      isPageLoaded = true;
+    };
+
+    if (!isPageLoaded) {
+      window.addEventListener('load', handleLoad);
+    }
 
     const animate = (currentTime: number) => {
-      if (startTime === null) {
-        startTime = currentTime;
-      }
+      if (startTime === null) startTime = currentTime;
       const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      // Ease out quart for the percentage counter
-      const easeProgress = 1 - Math.pow(1 - progress, 4);
-      
-      setCount(Math.floor(easeProgress * 100));
 
-      if (progress < 1) {
+      // Animate up to 90% over 2 seconds, wait for load, then finish.
+      const targetProgress = isPageLoaded ? 100 : Math.min((elapsed / 2000) * 90, 90);
+      
+      // Smooth interpolation
+      currentProgress += (targetProgress - currentProgress) * 0.1;
+      
+      setCount(Math.min(Math.round(currentProgress), 100));
+
+      if (currentProgress < 99.5) {
         animationFrameId = requestAnimationFrame(animate);
       } else {
-        // Wait at 100% briefly before dissolving
+        setCount(100);
         setTimeout(() => setLoading(false), 400); 
       }
     };
 
     animationFrameId = requestAnimationFrame(animate);
 
-    return () => cancelAnimationFrame(animationFrameId);
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('load', handleLoad);
+    };
   }, []);
 
   return (
     <AnimatePresence>
       {loading && (
         <motion.div
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-between bg-midnight text-pearl overflow-hidden"
+          className="fixed inset-0 z-[999] flex flex-col items-center justify-between bg-midnight text-pearl overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ 
             y: '-100%', 
