@@ -66,13 +66,17 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${
-          isScrolled 
-            ? 'py-4 bg-midnight/50 backdrop-blur-2xl border-b border-white/5 shadow-2xl' 
-            : 'py-8 bg-transparent'
+          isScrolled ? 'py-4' : 'py-8'
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div
+            className={`flex items-center justify-between transition-all duration-700 rounded-2xl ${
+              isScrolled 
+                ? 'glass px-6 py-3' 
+                : 'px-2 py-2 bg-transparent'
+            }`}
+          >
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <span className="font-heading font-bold text-3xl tracking-widest uppercase text-pearl group-hover:text-rose transition-colors duration-500">
