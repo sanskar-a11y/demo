@@ -3,10 +3,8 @@
    Ultra-premium cinematic beverage brand
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── Fonts: Clash Display (headings) + Satoshi (body) + Cursive (logo) ─────────── */
-@import url("https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap");
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+/* ── Fonts: Outfit (headings) + Plus Jakarta Sans (body) + Cursive (logo) ─────────── */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Great+Vibes&display=swap");
 
 /* ── Tailwind ─────────────────────────────────────────────────── */
 @import "tailwindcss";
@@ -16,8 +14,8 @@
    ═══════════════════════════════════════════════════════════════════ */
 @theme {
   /* ── Typography ───────────────────────────────────────────────── */
-  --font-heading: "Clash Display", sans-serif;
-  --font-body: "Satoshi", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
   --font-logo: "Great Vibes", cursive;
 
   /* ── Palette — atmospheric lighting, not flat paint ──────────── */

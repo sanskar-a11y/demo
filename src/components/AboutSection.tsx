@@ -8,12 +8,12 @@ const bespokeFeatures = [
   {
     title: 'Artisan Pizzas',
     description: 'Hand-stretched sourdough pizzas baked in our custom wood-fired oven. Fermented for 72 hours for an impossibly airy, charred crust.',
-    img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80',
+    img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80',
   },
   {
     title: 'Specialty Coffee',
     description: 'Single-origin microlots ethically sourced and micro-roasted. Served with absolute precision to highlight terroir-driven tasting notes.',
-    img: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1200&q=80',
+    img: 'https://images.unsplash.com/photo-1495474472205-d6f3e5046233?auto=format&fit=crop&w=1200&q=80',
   },
   {
     title: 'Signature Drinks',
@@ -94,7 +94,7 @@ export default function AboutSection() {
           <motion.div 
             className="absolute inset-[-15%] z-0 w-[130%] h-[130%] will-change-transform"
             style={{ 
-              backgroundImage: 'url("https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80")',
+              backgroundImage: 'url("https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=1200&q=80")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               y: backgroundY,

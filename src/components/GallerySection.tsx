@@ -6,12 +6,12 @@ import Image from 'next/image';
 import GalleryModal from './GalleryModal';
 
 const PRODUCTS = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1527281400683-1aae777175f8?auto=format&fit=crop&w=800&q=80', title: 'Midnight Elixir', description: 'Cold-drip extraction. Pure velvet.' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80', title: 'Velvet Reserve', description: 'Double-caffeinated precision.' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80', title: 'Crimson Drop', description: 'Botanical infusion. Zero compromise.' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80', title: 'Noir Essence', description: 'Smoked glass & shadow profiles.' },
-  { id: 5, src: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?auto=format&fit=crop&w=800&q=80', title: 'The Architect', description: 'Structured energy. Perfect balance.' },
-  { id: 6, src: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80', title: 'Obsidian Flow', description: 'Liquid midnight in every pour.' },
+  { id: 1, src: '/gallery/drink_1.png', title: 'Midnight Elixir', description: 'Cold-drip extraction. Pure velvet.' },
+  { id: 2, src: '/gallery/drink_2.png', title: 'Velvet Reserve', description: 'Double-caffeinated precision.' },
+  { id: 3, src: '/gallery/drink_3.png', title: 'Crimson Drop', description: 'Botanical infusion. Zero compromise.' },
+  { id: 4, src: '/gallery/drink_4.png', title: 'Noir Essence', description: 'Smoked glass & shadow profiles.' },
+  { id: 5, src: '/gallery/drink_5.png', title: 'The Architect', description: 'Structured energy. Perfect balance.' },
+  { id: 6, src: '/gallery/drink_1.png', title: 'Obsidian Flow', description: 'Liquid midnight in every pour.' },
 ];
 
 export default function GallerySection() {
