@@ -13,7 +13,7 @@ const bespokeFeatures = [
   {
     title: 'Specialty Coffee',
     description: 'Single-origin microlots ethically sourced and micro-roasted. Served with absolute precision to highlight terroir-driven tasting notes.',
-    img: 'https://images.unsplash.com/photo-1495474472205-d6f3e5046233?auto=format&fit=crop&w=1200&q=80',
+    img: 'https://lavantacoffee.com/wp-content/uploads/2025/06/2149878089-1.png',
   },
   {
     title: 'Signature Drinks',
